@@ -1,0 +1,16 @@
+.userCard{
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+    }
+}
+
+h3{
+    padding: 0;
+    margin: 0;
+}
