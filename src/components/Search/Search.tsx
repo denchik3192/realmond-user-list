@@ -1,12 +1,16 @@
-import { useState } from 'react';
 import s from './search.module.scss';
 
-const Search: React.FC = () => {
-  const [value, setValue] = useState('');
+interface ISearchProps {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const Search: React.FC<ISearchProps> = ({ searchValue, setSearchValue }) => {
   const onChaneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    setSearchValue(event.target.value);
   };
+
+  console.log('RENDER Search');
 
   return (
     <div className={s.searchBlock}>
@@ -16,7 +20,7 @@ const Search: React.FC = () => {
           name="search"
           id="search"
           placeholder="Find user"
-          value={value}
+          value={searchValue}
           onChange={onChaneInput}
         />
       </label>

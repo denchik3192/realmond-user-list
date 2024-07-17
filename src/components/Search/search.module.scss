@@ -2,9 +2,18 @@
     margin-bottom: 40px;
 
     input {
-        width: 400px;
+        width: 20em;
         height: 40px;
         padding: 0 10px 0 10px;
         font-size: 1.2em;
     }
 }
+
+@media  (max-width: 500px) {
+    .searchBlock {
+        input {
+            width: 100%;
+           
+        }
+    }
+  }
