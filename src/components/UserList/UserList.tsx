@@ -5,14 +5,13 @@ import Loader from '../Loader/Loader';
 
 interface IUserListProps {
   users: IUser[];
+  isLoading: boolean;
 }
 
-const UserList: React.FC<IUserListProps> = ({ users }) => {
-  if (users.length === 0) {
+const UserList: React.FC<IUserListProps> = ({ users, isLoading }) => {
+  if (isLoading) {
     return <Loader />;
   }
-
-  console.log('RENDER USERLIST');
 
   return (
     <>

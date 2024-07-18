@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import s from './search.module.scss';
 
 interface ISearchProps {
@@ -5,12 +6,10 @@ interface ISearchProps {
   setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Search: React.FC<ISearchProps> = ({ searchValue, setSearchValue }) => {
+const Search: React.FC<ISearchProps> = memo(function Search({ searchValue, setSearchValue }) {
   const onChaneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
-
-  console.log('RENDER Search');
 
   return (
     <div className={s.searchBlock}>
@@ -26,6 +25,6 @@ const Search: React.FC<ISearchProps> = ({ searchValue, setSearchValue }) => {
       </label>
     </div>
   );
-};
+});
 
 export default Search;
