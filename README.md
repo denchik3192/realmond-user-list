@@ -1,3 +1,29 @@
+## Realmond Users List
+
+# Description
+
+This React application is designed to display a list of users. It uses an API to retrieve user data and display it in a convenient format.
+
+# Installation
+
+1. Clone the repository:
+
+git clone https://github.com/denchik3192/realmond-user-list.git
+
+2. Install dependencies:
+
+npm install
+
+3. Run app:
+
+npm run dev
+
+Runs the app in the development mode.
+Open http://localhost:5173/ to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -22,7 +48,7 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
