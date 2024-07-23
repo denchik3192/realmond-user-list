@@ -3,6 +3,7 @@ import { IUser } from '../../interfaces/IUser';
 import s from './userlist.module.scss';
 import Loader from '../Loader/Loader';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface IUserListProps {
   users: IUser[];
@@ -21,22 +22,30 @@ const fadeInAnimationVariants = {
 };
 
 const UserList: React.FC<IUserListProps> = ({ users, isLoading }) => {
+  const [activeId, setActiveId] = useState<number | null>(null);
   if (isLoading) {
     return <Loader />;
   }
+
+  const handleClick = (id: number) => {
+    setActiveId(id);
+    activeId === id ? setActiveId(null) : setActiveId(id);
+  };
+
+  console.log(activeId);
 
   return (
     <>
       <div className={s.usersList}>
         {users?.map((user: IUser, idx: number) => (
           <motion.div
-            key={idx}
+            key={user.id}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             custom={idx}>
-            <User {...user} />
+            <User user={user} onClick={() => handleClick(user.id)} activeId={activeId} />
           </motion.div>
         ))}
       </div>
